@@ -1,0 +1,21 @@
+{
+    "name": "grzegorz/shared-memory",
+    "description": "SharedMemory",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Bobo1212\\SharedMemory\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "bobo1212",
+            "email": "bobo1212@wp.pl"
+        }
+    ],
+    "require": {
+        "ext-sysvshm": "*",
+        "ext-sysvsem": "*"
+    }
+}
