@@ -60,9 +60,13 @@ class Memory
 
     /**
      * @throws MemoryException
+     * @throws MemoryExceptionNotFound
      */
     public function read($key)
     {
+        if(false === shm_has_var($this->shmId, $key)){
+            throw new MemoryExceptionNotFound('Key not found ' . $key);
+        }
         $shmData = shm_get_var($this->shmId, $key);
         if (false === $shmData) {
             throw new MemoryException('shm_get_var read error');
